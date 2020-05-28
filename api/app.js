@@ -10,7 +10,7 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 
-app.use('./api', apiRoutes)
+app.use('/api', apiRoutes)
 
 //Check if it works 
 app.get('/', (req, res) => {

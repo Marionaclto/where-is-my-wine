@@ -10,12 +10,12 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
-    "mysql-promise": "^5.0.0"
+    "mysql": "^2.18.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "dev:server" : "nodemon ./api/app.js"
+    "dev:server": "nodemon ./api/app.js"
   }
 }
