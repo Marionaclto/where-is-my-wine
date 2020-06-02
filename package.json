@@ -16,6 +16,8 @@
     "nodemon": "^2.0.4"
   },
   "scripts": {
-    "dev:server": "nodemon ./api/app.js"
+    "dev:server": "nodemon ./api/app.js",
+    "dev:client": "cd ./client && yarn start",
+    "start": "npm-run-all -l -p dev:server dev:client"
   }
 }
