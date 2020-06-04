@@ -1,0 +1,10 @@
+.wine-image {
+    height: 300px;
+    width: auto
+}
+  
+.wine-list {
+    display: flex;
+    list-style-type: none;
+}
+  

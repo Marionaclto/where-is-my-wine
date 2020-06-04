@@ -1,28 +1,29 @@
 import React from 'react';
+import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
 import './App.css';
+import Home from './components/homePage';
+import End from './components/restaurantResults'
 
 class App extends React.Component {
   state = {
-    wines: []
+    path : '/'
   }
 
-  componentDidMount() {
-    fetch('http://localhost:3001/api/wines')
-      .then(response => response.json())
-      .then(response => {
-        this.setState({
-          wines : response
-        })
-      })
-  }
+  handleOnClick = path => {
+		this.setState({ path });
+	};
 
   render() {
 
     return(
       <div className="App">
-        {this.state.wines.map(wine => (
-          <li key={wine.id}><img src={wine.image} alt={wine.name}></img></li>
-        ))}
+        <BrowserRouter>
+          <NavLink to='/'>Home</NavLink>
+          <Switch>
+            <Route exact path='/' component={Home} />
+            <Route path='/search' component={End}/>
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }

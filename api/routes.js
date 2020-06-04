@@ -36,8 +36,8 @@ routes.get('/wines/:id', (req, res) => {
 //Insert a new wine
 routes.post("/wines", function(req, res) {
   
-    db(`INSERT INTO wines (name, classification, description, variety) VALUES ('${req.body.name}', 
-      '${req.body.classification}', '${req.body.description}', '${req.body.variety}');`
+    db(`INSERT INTO wines (name, classification, description, variety, image) VALUES ('${req.body.name}', 
+      '${req.body.classification}', '${req.body.description}', '${req.body.variety}', '${req.body.image}');`
     ).then(results => {
         res.send(results.data);
     })
