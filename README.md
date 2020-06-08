@@ -155,4 +155,8 @@ Where is my wine is a search tool to find a restaurant that have the wine you fa
     restaurantId: integer
     }
 
+### Full stack app architecture
 
+![Architecture app](/client/public/img/architecture_app.jpg)
+
+_This is a student project that was created at [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
