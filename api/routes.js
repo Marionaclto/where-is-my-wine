@@ -98,8 +98,8 @@ routes.get('/restaurants/:id', (req, res) => {
 //Insert a new restaurant
 routes.post("/restaurants", function(req, res) {
   
-    db(`INSERT INTO restaurants (name, city, latitude, longitude, phone) VALUES ('${req.body.name}', 
-      '${req.body.city}', '${req.body.latitude}', '${req.body.longitude}', '${req.body.phone}');`
+    db(`INSERT INTO restaurants (name, city, latitude, longitude, phone) VALUES ("${req.body.name}", 
+      "${req.body.city}", '${req.body.latitude}', '${req.body.longitude}', '${req.body.phone}');`
     ).then(results => {
         res.send(results.data);
     })
@@ -134,9 +134,31 @@ routes.patch("/restaurants/:id", function(req, res) {
     })
 })
 
+//Insert records in the realational table
+routes.post("/relation", function(req, res) {
+  
+    db(`INSERT INTO relation_wine_restaurant (wineId, restaurantId) 
+    VALUES ('${req.body.wineId}', '${req.body.restaurantId}');`
+    ).then(results => {
+        res.send(results.data);
+    })
+    .catch(err => res.status(500).send(err));
+});
+
+//Get the relations
+routes.get('/relations', (req, res) => {
+    db(`SELECT * FROM relation_wine_restaurant`).then(results => {
+        if(results.error) {
+            res.status(400).send({ message: "There's an error"})
+        }
+        res.send(results.data)
+    })
+    
+})
+
 //Inner join to have the restaurants that have certain wine
-routes.get("/restaurants/:wineId", function(req, res) {
-    const { wineId } = req.params;a
+routes.get("/restaurantByWineId/:wineId", function(req, res) {
+    const { wineId } = req.params;
     db(`SELECT * FROM restaurants INNER JOIN relation_wine_restaurant ON 
     restaurants.id = relation_wine_restaurant.restaurantId WHERE relation_wine_restaurant.wineId=${wineId}`)
     .then(results => {
@@ -146,5 +168,15 @@ routes.get("/restaurants/:wineId", function(req, res) {
         res.send(results.data)
     })
 })
+
+//Delete a relation by wineId
+routes.delete("/restaurantByWineId/:wineId", function(req, res) {
+    const { wineId } = req.params;
+    db(`DELETE FROM relation_wine_restaurant WHERE wineId=${wineId};`)
+      .then(results => {
+        res.send(results.data);
+      })
+      .catch(err => res.status(500).send(err));
+});
 
 module.exports = routes

@@ -6,5 +6,10 @@
 .wine-list {
     display: flex;
     list-style-type: none;
+    
+}
+
+.wine-title {
+    text-decoration: none;
 }
   

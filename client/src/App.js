@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter, Switch, Route, NavLink } from 'react-router-dom'
 import './App.css';
 import Home from './components/homePage';
-import End from './components/restaurantResults'
+import RestaurantResults from './components/restaurantResults'
 
 class App extends React.Component {
   state = {
@@ -21,7 +21,7 @@ class App extends React.Component {
           <NavLink to='/'>Home</NavLink>
           <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/search' component={End}/>
+            <Route path='/search/:wineId' component={RestaurantResults}/>
           </Switch>
         </BrowserRouter>
       </div>
