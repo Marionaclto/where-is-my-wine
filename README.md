@@ -1,6 +1,9 @@
 # where-is-my-wine
 Where is my wine is a search tool to find a restaurant that have the wine you fancy.
 
+## Database migration
+run yarn migrate
+
 ## User Flow
 
 ![User Flow](/client/public/img/USER_FLOW.png)
