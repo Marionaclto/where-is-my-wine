@@ -31,11 +31,13 @@ class RestaurantResults extends React.Component {
     }
 
     render() {
+        // doing a destructuring for readability const { restaurants } = this.state
         return(
             <Container >
                 <Row>
                     <Col className='map'>
                         <Map  google={this.props.google} zoom={7} initialCenter={center}>
+                            {/* You can remove index since you're not using it */}
                             {this.state.restaurants.map((restaurant, index) => (
                                 <Marker key={restaurant.id} position={{lat:restaurant.latitude, lng:restaurant.longitude}} />
                             ))}

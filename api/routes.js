@@ -36,6 +36,7 @@ routes.get('/wines/:id', (req, res) => {
 //Insert a new wine
 routes.post("/wines", function(req, res) {
   
+    // nitpick: here for readability something like: const { name, description, ... } = req.body would be better
     db(`INSERT INTO wines (name, classification, description, variety, image) VALUES ('${req.body.name}', 
       '${req.body.classification}', '${req.body.description}', '${req.body.variety}', '${req.body.image}');`
     ).then(results => {
