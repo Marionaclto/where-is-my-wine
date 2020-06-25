@@ -1,4 +1,27 @@
-.map{
-    width: 100%;
-    height: 400px;
+.map {
+	width: 100%;
+	height: 400px;
+	margin-top: 20px;
+}
+.map-flex {
+	border: 4px solid black;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+}
+.list-flex {
+	display: flex;
+	justify-content: center;
+	margin-top: 20%;
+}
+
+ul {
+	padding-left: 20%;
+	text-align: left;
+	font-family: 'Alegreya', serif;
+	font-weight: bolder;
+	color: black;
+}
+.my-container-results {
+	max-width: 100%;
 }

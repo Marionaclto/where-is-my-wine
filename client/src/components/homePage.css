@@ -1,15 +1,61 @@
-.wine-image {
-    height: 300px;
-    width: auto
+.my-container {
+	text-align: center;
+	background-color: #edddd4;
+	font-family: 'Roboto Mono', monospace;
 }
-  
+.my-row {
+	border: 5px solid black;
+}
+.my-jumbotron {
+	border: 5px solid black;
+	border-width: thick;
+	height: 400px;
+	margin-top: 160px;
+	background-color: #6a040f;
+	background-image: url(https://images.unsplash.com/photo-1568213816046-0ee1c42bd559?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=752&q=80);
+	background-size: cover;
+	background-position: center center;
+}
+
+.fixed-top {
+	background-color: #6a040f;
+	color: white;
+	height: 150px;
+}
+
+h1,
+h6 {
+	font-family: 'Alegreya', serif;
+	text-transform: uppercase;
+	text-align: center;
+	padding: 10px;
+}
+
 .wine-list {
-    display: flex;
-    list-style-type: none;
-    
+	margin-top: 10px;
+}
+.card-flex {
+	display: flex;
+	justify-content: center;
+	margin-top: 10%;
+	border-radius: 8px;
+}
+.wine-image {
+	height: 300px;
+	width: 100px;
 }
 
 .wine-title {
-    text-decoration: none;
+	font-family: 'Roboto Mono', monospace;
+	text-transform: uppercase;
+	color: #4f000b;
 }
-  
+.card {
+	box-shadow: 0 4px 8px 0 black;
+	transition: 0.3s;
+	width: 40%;
+	border-radius: 8px;
+}
+.card:hover {
+	box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
