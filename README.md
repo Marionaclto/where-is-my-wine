@@ -2,7 +2,17 @@
 Where is my wine is a search tool to find a restaurant that have the wine you fancy.
 
 ## Database migration
-run yarn migrate
+Create a database in MySQL : ```bash create database where_is_my_wine ```
+Add a ```bash .env ``` file to the main folder of this repository containing the MySQL authentication information for MySQL user.
+Run ```bash yarn migrate ```
+
+
+## Installation
+run ```bash yarn ``` in the project directory 
+cd client and run ```bash yarn ```
+
+## Development
+Run ```bash yarn start ``` in the project directory
 
 ## User Flow
 
